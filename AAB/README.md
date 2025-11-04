@@ -8,7 +8,7 @@ Ce projet permet de gérer les hôtels, les chambres, les clients, les employés
 - **Langage** : Kotlin
 - **Framework** : Spring Boot
 - **Base de données** : MySQL
-- **Build Tool** : Maven
+- **Build Tool** : Gradle
 - **ORM** : Spring Data JPA
 
 ## Diagramme UML
@@ -87,17 +87,17 @@ Voici le diagramme UML du projet :
 
 1. Clonez le repository :
 ```bash
-git clone https://github.com/bytcraft-team/Gestion_hotels.git
+git clone https://github.com/bytcraft-team/Hotel_Gesture.git
 ```
 
 2. Créez la base de données
 ```sql 
-   CREATE DATABASE gestion_hotels;
+   CREATE DATABASE hotel_db;
 ```
 3. Configurez `application.properties`
 ```properties
 spring.application.name=APiRes
-spring.datasource.url=jdbc:mysql://localhost:3306/gestion_hotels?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.url=jdbc:mysql://localhost:3306/hotel_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
 spring.datasource.username=hotel_user
 spring.datasource.password=password123
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -132,7 +132,8 @@ logging.level.APiRes=DEBUG
 - `PUT /api/employees{id}` - Mettre à jour un employé
 - `DELETE /suite/{id}` - Supprimer un employé
 
--`GET /api/clients` - Récupérer toutes les clients
+
+-`GET /api/clients` - Récupérer toutes les client
 - `GET /api/clients/{id}` - Récupérer une client par ID
 - `POST /api/clients` - Créer une nouvelle client
 - `PUT /api/clients/{id}` - Mettre à jour une client
@@ -174,4 +175,4 @@ logging.level.APiRes=DEBUG
 ** [ Aziza Laafar / Hocein Essaif ] ** - Projet Back-End Kotlin/Spring Boot
 
 ## Date
-[2025-11-03]
+[2025-11-04]
