@@ -25,6 +25,10 @@ class ChambreService(private val chambreRepo: ChambreRepository) {
         return chambreRepo.save(chambre)
     }
 
+    fun addAllChambre(chambres: List<Chambre>): List<Chambre> {
+        return chambreRepo.saveAll(chambres)
+    }
+
     fun addSuite(suite: ChambreSuite): Chambre {
         if (suite.prix < 0) throw BadRequestException("Le prix ne peut pas être négatif")
         if (suite.nombrePieces <= 0) throw BadRequestException("Le nombre de pièces doit être positif")

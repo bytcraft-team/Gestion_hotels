@@ -41,6 +41,10 @@ class ChambreController(private val chambreService: ChambreService) {
         )
         return ResponseEntity.status(HttpStatus.CREATED).body(chambreService.addChambre(chambre))
     }
+    @PostMapping("/all")
+    fun addAllChambre(@RequestBody chambres: List<Chambre>): List<Chambre> {
+        return chambreService.addAllChambre(chambres)
+    }
 
     @PostMapping("/suite")
     fun addSuite(@Valid @RequestBody dto: ChambreSuiteDTO): ResponseEntity<Chambre> {
@@ -77,6 +81,8 @@ class ChambreController(private val chambreService: ChambreService) {
     fun findByType(@PathVariable type: String): ResponseEntity<List<Chambre>> {
         return ResponseEntity.ok(chambreService.findByType(type))
     }
+
+
 
     @GetMapping("/prix-max/{maxPrix}")
     fun findByMaxPrix(@PathVariable maxPrix: Double): ResponseEntity<List<Chambre>> {

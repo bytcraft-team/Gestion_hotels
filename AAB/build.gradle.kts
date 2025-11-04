@@ -30,6 +30,7 @@ dependencies {
     runtimeOnly("com.h2database:h2") // ou votre DB préférée
     // runtimeOnly("org.postgresql:postgresql")
     // runtimeOnly("mysql:mysql-connector-java")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -54,3 +55,24 @@ tasks.withType<Test> {
 tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
     mainClass.set("APiRes.APiReservationApplicationKt")
 }
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "17"  // <-- ici on aligne Kotlin sur Java 17
+    }
+}
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+    mainClass.set("APiRes.APiReservationApplicationKt")
+}
+
+// ✅ Fix JVM target pour Kotlin
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
