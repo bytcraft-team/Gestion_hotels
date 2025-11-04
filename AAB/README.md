@@ -79,8 +79,8 @@ Voici le diagramme UML du projet :
 
 ### Prérequis
 - JDK 17+
-- MySQL installé
-- Maven (ou Gradle)
+- Mysql workbench
+- Gradle 
 - Postman (optionnel, pour tester les API)
 
 ## 🚀 Étapes d'installation
